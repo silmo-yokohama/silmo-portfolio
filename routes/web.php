@@ -1,13 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\Front\HomeController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Home');
+Route::name('front.')->group(function() {
+  Route::get('/' ,[HomeController::class ,'index'])->name('top');
 });
-
 
 require __DIR__.'/auth.php';
