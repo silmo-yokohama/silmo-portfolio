@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const menuSlice = createSlice({
-  name: "menu",
+  name: "frontMenuSwitch",
   initialState,
   reducers: {
     toggleMenu: (state) => {
