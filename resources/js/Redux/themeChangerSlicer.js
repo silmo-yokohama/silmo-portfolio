@@ -1,10 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-const Themes = {
+export const Themes = {
   dark: "myDark",
   light: "myLight",
 };
+
+const setTheme = theme => {
+  document.querySelector("html").setAttribute("data-theme", theme);
+  window.localStorage.setItem("currentTheme", theme);
+}
 
 export const themeSlicer = createSlice({
   name: "ThemeSwitch",
@@ -13,12 +18,14 @@ export const themeSlicer = createSlice({
   },
   reducers: {
     themeToggle: state => {
-      state.activeTheme = state.activeTheme === Themes.dark ? Themes.light : Themes.dark;
-      window.localStorage.setItem('currentTheme',state.activeTheme);
+      const theme =
+        state.activeTheme === Themes.dark ? Themes.light : Themes.dark;
+      state.activeTheme = theme
+      setTheme(theme);
     },
     themeChange: (state ,action) => {
       state.activeTheme = action.payload;
-      window.localStorage.setItem('currentTheme',state.activeTheme);
+      setTheme(action.payload);
     }
   }
 });
