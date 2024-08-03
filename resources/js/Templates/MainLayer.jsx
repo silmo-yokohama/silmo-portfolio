@@ -6,7 +6,7 @@ const MainLayer = ({ children }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const currentTheme = window.localStorage.getItem("theme");
+    const currentTheme = window.localStorage.getItem("currentTheme");
     document.querySelector("body").style.marginBottom = "0";
     dispatch(themeChange(currentTheme));
   }, []);
