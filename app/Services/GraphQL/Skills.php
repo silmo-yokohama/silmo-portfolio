@@ -3,10 +3,31 @@
 namespace App\Services\GraphQL;
 
 class Skills {
-  public static function get() {
-    $query = <<<QUERY
+  private const BOTTOM_LAYER_QUERY = <<<QUERY
+query getSkillBySlug {
+  allSkill(where: {childless: true}, first: 30) {
+    edges {
+      node {
+        slug
+        skillId
+        name
+        skillACF {
+          logo {
+            node {
+              sourceUrl
+            }
+          }
+          rate
+        }
+      }
+    }
+  }
+}
+QUERY;
+
+  private const GET_ALL_QUERY = <<<QUERY
 query getSkills {
-  allSkill {
+  allSkill(first: 100) {
     edges {
       node {
         name
@@ -29,7 +50,16 @@ query getSkills {
 }
 QUERY;
 
-    $result = GraphQLService::get($query);
+  public static function get() {
+    $c = get_called_class();
+    $result = GraphQLService::get($c::GET_ALL_QUERY);
+
+    return $result;
+  }
+
+  public static function getBottomLayer() {
+    $c = get_called_class();
+    $result = GraphQLService::get($c::BOTTOM_LAYER_QUERY);
 
     return $result;
   }

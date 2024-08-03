@@ -7,7 +7,7 @@ import MainLayer from "@/Templates/MainLayer";
 import React from "react";
 
 const Home = (props) => {
-  const { news } = props;
+  const { news, skills } = props;
 
   return (
     <MainLayer>
@@ -16,7 +16,7 @@ const Home = (props) => {
       <div className="pt-[100dvh] ">
         <NewsStatusSection news={news} />
         <LangMarquee />
-        <SkillsSection />
+        <SkillsSection skills={skills} />
       </div>
     </MainLayer>
   );

@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
   function index(Request $request) {
     $news = NewsStatus::get();
-    $skills = Skills::get();
+    $skills = Skills::getBottomLayer();
 
     $newsJson = json_decode($news);
     $skillsJson = json_decode($skills);
