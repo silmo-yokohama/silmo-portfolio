@@ -5,13 +5,14 @@ import MainLayer from "@/Templates/MainLayer";
 import React from "react";
 
 const Home = (props) => {
-  console.log(props);
+  const { news } = props;
+
   return (
     <MainLayer>
       <Header />
       <FirstView />
       <div className="pt-[100dvh] ">
-        <NewsStatusSection />
+        <NewsStatusSection news={news} />
       </div>
     </MainLayer>
   );
