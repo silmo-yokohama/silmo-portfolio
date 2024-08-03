@@ -7,10 +7,11 @@ const MainLayer = ({ children }) => {
 
   useEffect(() => {
     const currentTheme = window.localStorage.getItem("theme");
+    document.querySelector("body").style.marginBottom = "0";
     dispatch(themeChange(currentTheme));
   }, []);
 
-  return <main>{children}</main>;
+  return <main className="t">{children}</main>;
 };
 
 export default MainLayer;
