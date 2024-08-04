@@ -45,7 +45,7 @@ const SkillItem = ({ name, skillLevel, imagePath }) => {
     <div
       className="glass w-[30vw] md:w-[20vw] h-[30vw] md:h-[20vw] max-w-80 max-h-80 relative transition-all duration-500 bg-slate-300 group flex flex-col justify-center items-center p-5 overflow-hidden
               hover:w-[40vw] hover:md:w-[22vw] hover:h-[40vw] md:hover:h-[25vw] hover:max-w-96 hover:max-h-96 hover:bg-accent hover:drop-shadow-xl md:hover:shadow-[0_25px_30px_-5px_rgba(0,0,0,0.3)]
-              after:content-[''] after:absolute after:block after:transition-all after:duration-500 after:top-0 after:left-0 after:w-full after:h-full after:opacity-50 after:bg-black after:hover:opacity-0"
+              after:content-[''] after:absolute after:block after:transition-all after:duration-500 after:top-0 after:left-0 after:w-full after:h-full after:opacity-20 after:bg-black after:hover:opacity-0"
     >
       <h5 className="absolute en-title text-white w-full text-center top-[10px] md:top-[16px] transition-all duration-500 text-[4vw] md:text-[1.5vw] font-bold -translate-y-28 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
         {name}
@@ -54,7 +54,7 @@ const SkillItem = ({ name, skillLevel, imagePath }) => {
         <img
           src={imagePath}
           alt={name}
-          className="group-hover:drop-shadow-lg"
+          className="grayscale group-hover:grayscale-0 group-hover:drop-shadow-lg"
         />
       </div>
 
