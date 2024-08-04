@@ -1,3 +1,4 @@
+import AnimatedDivider from "@/Components/Sections/Common/AnimatedDivider";
 import LangMarquee from "@/Components/Sections/Common/LangMarquee";
 import FirstView from "@/Components/Sections/Home/FirstView";
 import NewsStatusSection from "@/Components/Sections/Home/NewsStatusSection";
@@ -23,7 +24,9 @@ const Home = (props) => {
       <FirstView />
       <div className="pt-[100dvh] ">
         <NewsStatusSection news={news} />
-        <div className="t divider bg-primary-content m-0"></div>
+
+        <AnimatedDivider />
+
         <SkillsSection skills={skills} />
 
         <LangMarquee />
