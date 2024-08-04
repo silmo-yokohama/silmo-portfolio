@@ -15,8 +15,10 @@ const Home = (props) => {
       <FirstView />
       <div className="pt-[100dvh] ">
         <NewsStatusSection news={news} />
-        <LangMarquee />
+        <div className="t divider bg-primary-content m-0"></div>
         <SkillsSection skills={skills} />
+
+        <LangMarquee />
       </div>
     </MainLayer>
   );
