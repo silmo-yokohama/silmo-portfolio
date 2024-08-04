@@ -3,6 +3,7 @@ import LangMarquee from "@/Components/Sections/Common/LangMarquee";
 import FirstView from "@/Components/Sections/Home/FirstView";
 import NewsStatusSection from "@/Components/Sections/Home/NewsStatusSection";
 import SkillsSection from "@/Components/Sections/Home/SkillsSection";
+import WorksSection from "@/Components/Sections/Home/WorksSection";
 import OpeningAnimation from "@/Components/Share/Animations/OpeningAnimation";
 import Header from "@/Components/Share/Header/Header";
 import MainLayer from "@/Templates/MainLayer";
@@ -28,6 +29,8 @@ const Home = (props) => {
         <AnimatedDivider />
 
         <SkillsSection skills={skills} />
+
+        <WorksSection />
 
         <LangMarquee />
       </div>
