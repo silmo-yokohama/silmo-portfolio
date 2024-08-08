@@ -10,11 +10,10 @@ import MainLayer from "@/Templates/MainLayer";
 import React, { useState } from "react";
 
 const Home = (props) => {
-  const { news, skills } = props;
+  const { news, skills, works } = props;
 
   const [showOPAnime, setOPAnime] = useState(true);
   const hideOPAnime = () => {
-    console.log("Hide Opening Animation");
     setOPAnime(false);
   };
 
@@ -30,7 +29,7 @@ const Home = (props) => {
 
         <SkillsSection skills={skills} />
 
-        <WorksSection />
+        <WorksSection works={works} />
 
         <LangMarquee />
       </div>

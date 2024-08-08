@@ -1,7 +1,7 @@
 import React from "react";
 import SectionTitle from "../Common/SectionTitle";
 import Marquee from "react-fast-marquee";
-import SkillLevel from "@/Components/Share/Progress/SkillLevel";
+// import SkillLevel from "@/Components/Share/Progress/SkillLevel";
 
 const SkillsSection = ({ skills }) => {
   return (
@@ -13,17 +13,9 @@ const SkillsSection = ({ skills }) => {
         <Marquee speed={100} pauseOnHover={true} className="">
           {skills.data.allSkill.edges.map((skill, index) => {
             const name = skill.node.name;
-            const rate = skill.node.skillACF.rate;
             const imagePath = skill.node.skillACF.logo.node.sourceUrl;
 
-            return (
-              <SkillItem
-                name={name}
-                skillLevel={rate}
-                imagePath={imagePath}
-                key={index}
-              />
-            );
+            return <SkillItem name={name} imagePath={imagePath} key={index} />;
           })}
         </Marquee>
       </div>
@@ -31,16 +23,7 @@ const SkillsSection = ({ skills }) => {
   );
 };
 
-const SkillItem = ({ name, skillLevel, imagePath }) => {
-  let progressColor;
-  if (skillLevel < 3) {
-    progressColor = "bg-indigo-700";
-  } else if (skillLevel < 7) {
-    progressColor = "bg-warning";
-  } else if (skillLevel >= 7) {
-    progressColor = "bg-error";
-  }
-
+const SkillItem = ({ name, imagePath }) => {
   return (
     <div
       className="glass w-[30vw] md:w-[20vw] h-[30vw] md:h-[20vw] max-w-80 max-h-80 relative transition-all duration-500 bg-slate-300 group flex flex-col justify-center items-center p-5 overflow-hidden
