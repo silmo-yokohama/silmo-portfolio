@@ -7,8 +7,6 @@ import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 
-const appName = import.meta.env.VITE_APP_NAME || "Laravel";
-
 createInertiaApp({
   resolve: (name) =>
     resolvePageComponent(

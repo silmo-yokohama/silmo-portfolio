@@ -1,5 +1,5 @@
 import { themeChange } from "@/Redux/themeChangerSlicer";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 const MainLayer = ({ children }) => {
