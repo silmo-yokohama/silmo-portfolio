@@ -3,7 +3,8 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "lint": "eslint ."
     },
     "devDependencies": {
         "@eslint/js": "^9.8.0",
@@ -15,7 +16,7 @@
         "autoprefixer": "^10.4.12",
         "axios": "^1.6.4",
         "daisyui": "^4.12.10",
-        "eslint": "^9.8.0",
+        "eslint": "^8.57.0",
         "eslint-plugin-react": "^7.35.0",
         "globals": "^15.9.0",
         "laravel-vite-plugin": "^1.0",
@@ -29,6 +30,7 @@
     "dependencies": {
         "@emotion/css": "^11.13.0",
         "@gsap/react": "^2.1.1",
+        "@react-spring/web": "^9.7.4",
         "@reduxjs/toolkit": "^2.0.1",
         "date-fns": "^3.6.0",
         "framer-motion": "^10.18.0",
